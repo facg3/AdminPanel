@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <meta charset="utf-8">
+    <title>Admin Panel - Login</title>
+    <link rel="stylesheet" href="/css/login.css">
+  </head>
+  <body>
+      <div class="form-container">
+          <h1 class="form-header heading-color">Sign in</h1>
+          <form action="/login" method="POST" class="form-content">
+              <fieldset>
+                  <input id="username" type="text" placeholder="Name" class="form-input-control" />
+                  <input id="password" type="password" placeholder="Password" class="form-input-control">
+                  <input id="submit" type="submit" value="Sign in" class="form-submit-control" />
+              </fieldset>
+          </form>
+      </div>
+      <script type="text/javascript" src="js/request.js"></script>
+      <script type="text/javascript" src="js/loginSubmit.js"></script>
+  </body>
+</html>
