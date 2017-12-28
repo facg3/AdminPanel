@@ -12,7 +12,7 @@ const errors = require('./error');
 
 router.get('/', login.page);
 router.get('/dashboard', dashboard.get);
-// router.get('/members', members.getAllMembers);
+router.get('/members', members.getAllMembers);
 // router.get('/posts', posts.getAllPosts);
 // router.post('/member/delete', members.deleteMember);
 // router.post('/member/update', members.updateMember);
