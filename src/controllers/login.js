@@ -7,7 +7,6 @@ exports.page = (req, res) => {
 exports.process = (req, res) => {
   const adminObj = JSON.parse(req.body);
   query.compareLogin(adminObj, (errorConnectingToDB, nextStep) => {
-    console.log(errorConnectingToDB);
     if (errorConnectingToDB) {
       return res.send('errorConnectingToDB');
     } else if (nextStep === 'noSuchAdmin' || nextStep === 'wrongPassword') {
