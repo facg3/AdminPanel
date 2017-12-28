@@ -19,7 +19,7 @@ router.get('/dashboard', dashboard.get);
 // router.post('/post/delete', posts.deletePost);
 // router.post('/post/update', posts.updatePost);
 router.post('/login', login.process);
-router.post('/logout', logout.get);
+router.get('/logout', logout.get);
 router.use(errors.client);
 router.use(errors.server);
 
