@@ -10,6 +10,8 @@ exports.cookieChecker = (req, res, next) => {
   const endpoint = req.url;
   if (!req.headers.cookie && endpoint !== '/' && endpoint !== '/login') {
     return res.redirect('/');
+  } else if (req.headers.cookie && endpoint === '/') {
+    return res.redirect('/dashboard');
   }
   next();
 };

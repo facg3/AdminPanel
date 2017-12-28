@@ -1,6 +1,5 @@
 const query = require('../database/queries');
 
-
 let memberArr;
 query.getAllMembers((errorConnectingToDB, members) => {
   if (errorConnectingToDB) {
@@ -27,8 +26,15 @@ const getAllMembers = (req, res) => {
   });
 };
 
+const deleteUser = (req, res) => {
+  query.delMember(req, res, () => {
+    res.send('deleted');
+  });
+};
+
 module.exports = {
   getAllMembers,
   membersCount,
+  deleteUser,
   page,
 };

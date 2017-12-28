@@ -1,8 +1,6 @@
 const express = require('express');
 
 const router = express.Router();
-
-
 const login = require('./login');
 const logout = require('./logout');
 const dashboard = require('./dashboard');
@@ -16,8 +14,8 @@ router.get('/members', members.page);
 router.get('/getMembers', members.getAllMembers);
 router.get('/posts', posts.page);
 // router.get('/getPosts', posts.getAllPosts);
-// router.post('/member/delete', members.deleteMember);
-// router.post('/member/update', members.updateMember);
+router.post('/member/delete', members.deleteUser);
+// router.post('/member/update', members.updateUser);
 // router.post('/post/delete', posts.deletePost);
 // router.post('/post/update', posts.updatePost);
 router.post('/login', login.process);
