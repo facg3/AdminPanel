@@ -1,0 +1,18 @@
+<h1>Dashboard - Members</h1>
+<h2 style="padding-top:20px;">Status</h2>
+<table style="width:100%">
+  <tr>
+    <th>ID</th>
+    <th>Username</th>
+    <th>Password</th>
+    <th>Control</th>
+  </tr>
+{{#each memberArr}}
+  <tr>
+    <td>{{id}}</td>
+    <td>{{username}}</td>
+    <td>{{password}}</td>
+    <td><button type="button" name="button">D</button> <button type="button" name="button">E</button></td>
+  </tr>
+{{/each}}
+</table>
