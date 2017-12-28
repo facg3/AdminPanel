@@ -10,7 +10,6 @@ select('#submit').addEventListener('click', (e) => {
       password: select('#password').value,
     },
   };
-  // alert('myalert', reqObject.body.username);
   request(reqObject, (err, res) => {
     if (err) {
       return console.log('errorConnectingToDB');

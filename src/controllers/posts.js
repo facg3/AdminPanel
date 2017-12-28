@@ -6,7 +6,6 @@ query.getAllPosts((errorConnectingToDB, postsResult) => {
     return 'errorConnectingToDB';
   }
   postsArr = postsResult;
-  console.log(postsResult);
   return postsArr;
 });
 
