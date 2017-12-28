@@ -5,12 +5,11 @@ const env = require('env2');
 
 env('./config.env');
 
-if (!process.env.local_db) {
-  return new Error('Environment variable local_db must be set');
+if (!process.env.USERS_DB_URL) {
+  return new Error('Environment variable USERS_DB_URL must be set');
 }
 
-const params = url.parse(process.env.local_db);
-
+const params = url.parse(process.env.USERS_DB_URL);
 const [username, password] = params.auth.split(':');
 
 const options = {
