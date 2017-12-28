@@ -7,6 +7,7 @@ module.exports = {
   getAllMembers: members.getAllMembers,
   delMember: members.delMember,
   modMember: members.modMember,
+  getMemberPosts: members.getMemberPosts,
   getAllPosts: posts.getAllPosts,
   delPost: posts.delPost,
   modPost: posts.modPost,
