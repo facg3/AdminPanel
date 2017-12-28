@@ -3,7 +3,7 @@ const request = (reqObject, cb) => {
   xhr.onreadystatechange = () => {
     if (xhr.readyState === 4) {
       if (xhr.status === 200) {
-        cb(xhr.responseText);
+        cb(null, xhr.responseText);
       } else {
         console.log(xhr.responseText);
       }
