@@ -1,5 +1,4 @@
 const query = require('../database/queries');
-const cookie = require('./cookie');
 
 exports.page = (req, res) => {
   res.render('login', { layout: false });
@@ -9,11 +8,12 @@ exports.process = (req, res) => {
   const adminObj = JSON.parse(req.body);
   query.compareLogin(adminObj, (errorConnectingToDB, nextStep) => {
     if (errorConnectingToDB) {
-      return res.send('errorConnectingToDB');
+      res.send('errorConnectingToDB');
     } else if (nextStep === 'noSuchAdmin' || nextStep === 'wrongPassword') {
-      return res.send('notCorrectLoginAttempt');
+      res.send('notCorrectLoginAttempt');
+    } else {
+      res.setHeader('Set-Cookie', ['logged_in=true; Max_Age=240*600*600']);
+      return res.send('redirectToDashboard');
     }
-    // cookie.set(req, res);
-    return res.send('redirectToDashboard');
   });
 };

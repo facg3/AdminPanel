@@ -7,6 +7,7 @@ const routes = require('./controllers');
 // const helpers = require('./views/helpers/index');
 const favicon = require('serve-favicon');
 const bodyParser = require('body-parser');
+const cookie = require('./controllers/cookie');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -29,6 +30,7 @@ app.engine('hbs', hbars({
 
 app.set('port', process.env.PORT || 4001);
 app.use(favicon(path.join(__dirname, '..', 'public', 'img', 'favicon.ico')));
+app.use(cookie.cookieChecker);
 app.use(routes);
 
 module.exports = app;
