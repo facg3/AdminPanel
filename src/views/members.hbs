@@ -8,11 +8,14 @@
     <th>Control</th>
   </tr>
 {{#each memberArr}}
-  <tr>
-    <td>{{id}}</td>
-    <td>{{username}}</td>
-    <td>{{password}}</td>
-    <td><button type="button" name="button">D</button> <button type="button" name="button">E</button></td>
+  <tr id='one-member'>
+    <td id="user-id">{{id}}</td>
+    <td id="username">{{username}}</td>
+    <td id="password">{{password}}</td>
+    <td>
+      <button id="delete-btn" onclick="delete-user" type="button" name="button">D</button>
+      <button id="edit-btn" onclick="edit-user" type="button" name="button">E</button>
+    </td>
   </tr>
 {{/each}}
 </table>

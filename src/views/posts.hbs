@@ -8,11 +8,14 @@
     <th>Control</th>
   </tr>
 {{#each postsArr}}
-  <tr>
-    <td>{{id}}</td>
-    <td>{{member_id}}</td>
-    <td>{{contents}}</td>
-    <td><button type="button" name="button">D</button> <button type="button" name="button">E</button></td>
+  <tr id="one-post">
+    <td id="post-id">{{id}}</td>
+    <td id="member-id">{{member_id}}</td>
+    <td id="contents">{{contents}}</td>
+    <td>
+      <button id="delete-btn" onclick="delete-post" type="button" name="button">D</button>
+      <button id="edit-btn" onclick="edit-post" type="button" name="button">E</button>
+    </td>
   </tr>
 {{/each}}
 </table>
