@@ -1,4 +1,5 @@
 const query = require('../database/queries');
+const cookie = require('./cookie');
 
 exports.page = (req, res) => {
   res.render('login', { layout: false });
@@ -12,6 +13,7 @@ exports.process = (req, res) => {
     } else if (nextStep === 'noSuchAdmin' || nextStep === 'wrongPassword') {
       return res.send('notCorrectLoginAttempt');
     }
-    res.send('redirectToDashboard');
+    // cookie.set(req, res);
+    return res.send('redirectToDashboard');
   });
 };
