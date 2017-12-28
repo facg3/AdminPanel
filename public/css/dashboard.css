@@ -1,0 +1,152 @@
+* {
+  font-family: monospace;
+  margin:0;
+  padding:0;
+}
+body {
+  font-size:15px;
+}
+#nav {
+   position:fixed;
+   width:200px;
+   height:100%;
+   color: #404040;
+   top: 0;
+   left: 0;
+   background-color: #ececec;
+   border-right: 1px solid #9b9b9b;
+}
+#nav li {
+   clear:both;
+   padding-top:5px;
+   padding-bottom:5px;
+   float: left;
+   position: relative;
+   width: 100%;
+}
+
+#nav li.nav-item:hover {
+  background-color: #fff;
+  border-right:1px solid #fff;
+  border-top:1px solid #9b9b9b;
+  border-bottom:1px solid #9b9b9b;
+}
+
+#nav li.nav-item {
+  cursor:pointer;
+}
+
+#nav li.active {
+  background-color: #fff;
+  border-right:1px solid #fff;
+  border-top:1px solid #9b9b9b;
+  border-bottom:1px solid #9b9b9b;
+}
+
+#nav span {
+   margin-left: 20px;
+}
+#nav .nav-title {
+   font-size: 16px;
+   padding-top: 15px;
+   padding-left: 10px;
+   padding-bottom: 15px;
+   height: 20px;
+}
+#nav .nav-sub {
+   text-transform: uppercase;
+   color: #aaa;
+   font-size: 11px;
+   padding-left: 15px;
+}
+#nav .nav-bubble {
+   position: absolute;
+   background-color:#b00038;
+   color:#fff;
+   width:16px;
+   height:16px;
+   font-size: 10px;
+   text-align: center;
+   top: 5px;
+   right: 10px;
+}
+
+#page {
+  margin-top:20px;
+  margin-left:220px;
+}
+#page h1 {
+  font-weight:normal;
+  font-size:28px;
+}
+#page .tab {
+  margin-top:20px;
+}
+#page .tab li {
+  float:left;
+  color:#aaa;
+  list-style-type:none;
+  padding-right:10px;
+  padding-left:10px;
+  padding-bottom:5px;
+  cursor:pointer;
+}
+#page .tab li:hover, #page .tab li.active {
+  color:#000;
+  border-bottom:2px solid #b00038;
+}
+
+#page .row {
+  clear:both;
+  display:block;
+  padding-bottom:2px;
+}
+#page .row label {
+  float:left;
+  text-align:left;
+  padding-right:10px;
+  width:150px;
+  font-size:12px;
+  color:#888;
+  font-weight:bold;
+}
+#page .row input[type="text"] {
+  color:#000;
+  font-size:12px;
+  font-family:Tahoma;
+}
+#page table {
+  width:100%;
+  padding-bottom:20px;
+}
+#page table th, #page table td {
+  text-align:left;
+  padding:1px;
+}
+#page table th {
+  text-transform:uppercase;
+  font-size:10px;
+}
+
+#page table td {
+  color:#888;
+}
+#page table a {
+  text-decoration:none;
+  color:#b00038;
+}
+
+#page input[type="submit"] {
+  padding:4px;
+}
+#page h2, #page h4 {
+  font-weight:normal;
+  color:#b00038;
+  font-size:16px;
+  padding-bottom:10px;
+}
+
+#page h4 {
+  color:#000084;
+  font-size:14px;
+}

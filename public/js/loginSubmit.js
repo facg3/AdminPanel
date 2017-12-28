@@ -13,8 +13,11 @@ select('#submit').addEventListener('click', (e) => {
   // alert('myalert', reqObject.body.username);
   request(reqObject, (err, res) => {
     if (err) {
-      return console.log(err);
+      return console.log('errorConnectingToDB');
+    } else if (res === 'noSuchAdmin' || res === 'wrongPassword') {
+      return console.log('loginFailed');
+    } else if (res === 'redirectToDashboard') {
+      window.location.pathname = '/dashboard';
     }
-    console.log(res);
   });
 });

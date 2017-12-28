@@ -7,11 +7,12 @@ exports.page = (req, res) => {
 
 exports.process = (req, res) => {
   const adminObj = JSON.parse(req.body);
-  query.compareLogin(adminObj, (noSuchAdmin, nextStep) => {
-    if (noSuchAdmin) {
+  query.compareLogin(adminObj, (errorConnectingToDB, nextStep) => {
+    console.log(errorConnectingToDB);
+    if (errorConnectingToDB) {
       return res.send('errorConnectingToDB');
     } else if (nextStep === 'noSuchAdmin' || nextStep === 'wrongPassword') {
-      return res.send('notCorrectLoginAttemp');
+      return res.send('notCorrectLoginAttempt');
     }
     cookie.set(req, res);
     return res.send();
