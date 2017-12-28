@@ -12,9 +12,9 @@ select('#submit').addEventListener('click', (e) => {
   };
   request(reqObject, (err, res) => {
     if (err) {
-      return console.log('errorConnectingToDB');
+      return alert('errorConnectingToDB');
     } else if (res === 'noSuchAdmin' || res === 'wrongPassword') {
-      return console.log('loginFailed');
+      return alert('loginFailed');
     } else if (res === 'redirectToDashboard') {
       window.location.pathname = '/dashboard';
     }

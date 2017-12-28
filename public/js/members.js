@@ -5,12 +5,12 @@ const delete_user = (event) => {
     method: 'POST',
     body: { user_id: id },
   };
-  request(reqObject, (res, err) => {
+  request(reqObject, (err, res) => {
     if (err) {
-      console.log('err');
-    } else {
-      // console.log(res);
-      window.pathname.location = '/members';
+      return alert('Error Occured, try again...');
+    } else if (res === 'deleted') {
+      return window.location.pathname = '/members';
     }
+    alert('Something went wrong');
   });
 };
