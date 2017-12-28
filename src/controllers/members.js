@@ -28,7 +28,14 @@ const getAllMembers = (req, res) => {
 
 const deleteUser = (req, res) => {
   query.delMember(req, res, () => {
-    res.send('deleted');
+    query.getAllMembers((errorConnectingToDB, members) => {
+      if (errorConnectingToDB) {
+        return 'errorConnectingToDB';
+      }
+      memberArr = members;
+      return members;
+    });
+    page(req, res);
   });
 };
 
