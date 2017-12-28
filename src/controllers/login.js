@@ -5,19 +5,13 @@ exports.page = (req, res) => {
 };
 
 exports.process = (req, res) => {
-  let allData = '';
-  req.on('data', (chunk) => {
-    allData += chunk;
-  });
-  req.on('end', () => {
-    const adminObj = JSON.parse(allData);
-    query.compareLogin(adminObj, (noSuchAdmin, nextStep) => {
-      if (noSuchAdmin) {
-        return res.send('errorConnectingToDB');
-      } else if (nextStep === 'noSuchAdmin' || nextStep === 'wrongPassword') {
-        return res.send('notCorrectLoginAttemp');
-      }
-      return res.redirect('/dashboard');
-    });
+  const adminObj = JSON.parse(req.body);
+  query.compareLogin(adminObj, (noSuchAdmin, nextStep) => {
+    if (noSuchAdmin) {
+      return res.send('errorConnectingToDB');
+    } else if (nextStep === 'noSuchAdmin' || nextStep === 'wrongPassword') {
+      return res.send('notCorrectLoginAttemp');
+    }
+    return res.redirect('/dashboard');
   });
 };

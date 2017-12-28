@@ -6,7 +6,15 @@ const path = require('path');
 const routes = require('./controllers');
 // const helpers = require('./views/helpers/index');
 const favicon = require('serve-favicon');
+const bodyParser = require('body-parser');
 
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.raw({ type: () => true }));
+// app.use((req, res, next) => {
+//   console.log(`I am working : ${req.body}`);
+//   next();
+// });
 
 app.use(express.static(path.join(__dirname, '..', 'public')));
 
