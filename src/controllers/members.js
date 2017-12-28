@@ -30,12 +30,11 @@ const deleteUser = (req, res) => {
   query.delMember(req, res, () => {
     query.getAllMembers((errorConnectingToDB, members) => {
       if (errorConnectingToDB) {
-        return 'errorConnectingToDB';
+        return res.end('errorConnectingToDB');
       }
       memberArr = members;
-      return members;
+      return res.send('deleted');
     });
-    page(req, res);
   });
 };
 
