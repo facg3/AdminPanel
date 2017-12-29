@@ -91,6 +91,24 @@ body{
     border-top: 1px solid #FD9A83;
     border-bottom: 1px solid #F17457;
 }
+.user-login-feedback {
+  z-index: -1;
+  position: relative;
+  transform: translateY(0px);
+  background: #FD795B;
+  padding: 0.925rem;
+  color: #EDEAE7;
+  text-transform: uppercase;
+  font-size: 1rem;
+  border: none;
+  border-top: 1px solid #FD9A83;
+  border-bottom: 1px solid #F17457;
+  transition: transform 0.5s;
+  /* visibility: hidden; */
+}
+.user-login-feedback.hidden {
+  transform: translateY(-60px);
+}
 .form-footer{
     line-height: 1.9;
 }
