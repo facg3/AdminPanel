@@ -5,7 +5,7 @@ const test = require('tape');
 test('Test for endpoint: /login', (t) => {
   supertest(app)
     .get('/api/v1/login')
-    .expect(404)
+    .expect(200)
     .end((err, res) => {
       t.error(err, 'no error');
       t.end();
