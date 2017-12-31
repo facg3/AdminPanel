@@ -5,32 +5,19 @@ const delMember = (req, res, cb) => {
     text: 'delete from posts where member_id=$1',
     values: [JSON.parse(req.body).user_id],
   };
-  connect.query(sqlQueries, (errorConnectingToDB, res) => {
+  connect.query(sqlQueries, (errorConnectingToDB) => {
     if (errorConnectingToDB) return cb('errorConnectingToDB');
 
     const sql2Queries = {
       text: 'delete from members where id=$1',
       values: [JSON.parse(req.body).user_id],
     };
-    connect.query(sql2Queries, (error, queryResponse) => {
-      console.log(error);
-      console.log(null, queryResponse);
-      console.log(res);
+    connect.query(sql2Queries, (error) => {
       if (error) return cb('error');
       return cb(error, 'deleted');
     });
+    return null;
   });
 };
-//   const sqlQueries = {
-//     text: 'delete from members where id=$1',
-//     values: [JSON.parse(req.body).user_id],
-//   };
-//   connect.query(sqlQueries, (errorConnectingToDB, res) => {
-//     console.log(errorConnectingToDB);
-//     console.log(null, res);
-//     if (errorConnectingToDB) return cb('errorConnectingToDB');
-//     return cb(errorConnectingToDB, 'deleted');
-//   });
-// };
 
 module.exports = delMember;

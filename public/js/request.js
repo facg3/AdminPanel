@@ -5,9 +5,10 @@ const request = (reqObject, cb) => {
       if (xhr.status === 200) {
         cb(null, xhr.responseText);
       } else {
-        console.log(xhr.responseText);
+        return alert(xhr.responseText);
       }
     }
+    return null;
   };
   xhr.open(reqObject.method, reqObject.url);
   xhr.send(JSON.stringify(reqObject.body));

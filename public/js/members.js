@@ -11,6 +11,6 @@ const delete_user = (event) => {
     } else if (res === 'deleted') {
       return window.location.pathname = '/members';
     }
-    alert('Something went wrong');
+    return alert('Something went wrong');
   });
 };
