@@ -13,5 +13,5 @@ exports.cookieChecker = (req, res, next) => {
   } else if (req.headers.cookie.includes('logged_in=true') && endpoint === '/') {
     return res.redirect('/dashboard');
   }
-  next();
+  return next();
 };

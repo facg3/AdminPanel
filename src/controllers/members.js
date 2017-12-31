@@ -1,19 +1,6 @@
 const query = require('../database/queries');
 
-let memberArr;
-query.getAllMembers((errorConnectingToDB, members) => {
-  if (errorConnectingToDB) {
-    return 'errorConnectingToDB';
-  }
-  memberArr = members;
-  return members;
-});
 
-const page = (req, res) => {
-  res.render('members', {
-    title: 'Members', style: 'dashboard', memberArr,
-  });
-};
 
 let membersCount;
 const getAllMembers = (req, res) => {
@@ -26,21 +13,36 @@ const getAllMembers = (req, res) => {
   });
 };
 
-const deleteUser = (req, res) => {
-  query.delMember(req, res, () => {
+const delMember = (req, res) => {
+  query.delMember(req, res, (err, dbresponse) => {
+    // normally dbresponse should be 'deleted'
+    if (err) {
+      return res.end('errorDeletingPosts');
+    }
     query.getAllMembers((errorConnectingToDB, members) => {
-      if (errorConnectingToDB) {
-        return res.end('errorConnectingToDB');
-      }
       memberArr = members;
       return res.send('deleted');
     });
   });
 };
 
+const page = (req, res) => {
+  let memberArr;
+  query.getAllMembers((errorConnectingToDB, members) => {
+    if (errorConnectingToDB) {
+      return 'errorConnectingToDB';
+    }
+    memberArr = members;
+    res.render('members', {
+      title: 'Members', style: 'dashboard', memberArr,
+    });
+    return null;
+  });
+};
+
 module.exports = {
   getAllMembers,
   membersCount,
-  deleteUser,
+  delMember,
   page,
 };

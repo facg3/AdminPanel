@@ -14,7 +14,7 @@ router.get('/members', members.page);
 router.get('/getMembers', members.getAllMembers);
 router.get('/posts', posts.page);
 // router.get('/getPosts', posts.getAllPosts);
-router.post('/member/delete', members.deleteUser);
+router.post('/member/delete', members.delMember);
 // router.post('/member/update', members.updateUser);
 // router.post('/post/delete', posts.deletePost);
 // router.post('/post/update', posts.updatePost);
