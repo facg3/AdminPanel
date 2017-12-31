@@ -13,8 +13,8 @@ select('#submit').addEventListener('click', (e) => {
   request(reqObject, (err, res) => {
     if (err) {
       return alert('errorConnectingToDB');
-    } else if (res === 'noSuchAdmin' || res === 'wrongPassword') {
-      return alert('loginFailed');
+    } else if (res === 'notCorrectLoginAttempt') {
+      select('.user-login-feedback').classList.remove('hidden');
     } else if (res === 'redirectToDashboard') {
       window.location.pathname = '/dashboard';
     }
