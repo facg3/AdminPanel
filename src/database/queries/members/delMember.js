@@ -19,6 +19,7 @@ const delMember = (req, res, cb) => {
       }
       return cb(null, 'deleted');
     });
+    return null;
   });
 };
 
