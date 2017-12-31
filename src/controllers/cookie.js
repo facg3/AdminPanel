@@ -13,5 +13,5 @@ exports.cookieChecker = (req, res, next) => {
   } else if (req.headers.cookie && endpoint === '/') {
     return res.redirect('/dashboard');
   }
-  next();
+  return next();
 };

@@ -15,5 +15,6 @@ exports.process = (req, res) => {
       res.setHeader('Set-Cookie', ['logged_in=true; Max_Age=240*600*600']);
       return res.send('redirectToDashboard');
     }
+    return null;
   });
 };

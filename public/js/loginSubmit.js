@@ -18,5 +18,6 @@ select('#submit').addEventListener('click', (e) => {
     } else if (res === 'redirectToDashboard') {
       window.location.pathname = '/dashboard';
     }
+    return null;
   });
 });

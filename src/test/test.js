@@ -6,7 +6,7 @@ test('Test for endpoint: /login', (t) => {
   supertest(app)
     .get('/api/v1/login')
     .expect(404)
-    .end((err, res) => {
+    .end((err) => {
       t.error(err, 'no error');
       t.end();
     });

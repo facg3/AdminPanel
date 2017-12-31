@@ -20,6 +20,7 @@ const compareLogin = (adminObj, cb) => {
       }
       return cb(null, 'loginAllowed');
     });
+    return null;
   });
 };
 
