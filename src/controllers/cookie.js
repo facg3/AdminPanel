@@ -8,9 +8,10 @@ exports.delete = (req, res) => {
 
 exports.cookieChecker = (req, res, next) => {
   const endpoint = req.url;
-  if (!req.headers.cookie && endpoint !== '/' && endpoint !== '/login') {
+  console.log(req.headers.cookie);
+  if (!req.headers.cookie.includes('logged_in=true') && endpoint !== '/' && endpoint !== '/login') {
     return res.redirect('/');
-  } else if (req.headers.cookie && endpoint === '/') {
+  } else if (req.headers.cookie.includes('logged_in=true') && endpoint === '/') {
     return res.redirect('/dashboard');
   }
   return next();
