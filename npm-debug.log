@@ -1,0 +1,26 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/bin/node', '/usr/bin/npm', 'run', 'watch' ]
+2 info using npm@1.4.21
+3 info using node@v6.12.0
+4 verbose run-script [ 'prewatch', 'watch', 'postwatch' ]
+5 info prewatch AdminPanel@1.0.0
+6 info watch AdminPanel@1.0.0
+7 verbose unsafe-perm in lifecycle true
+8 info AdminPanel@1.0.0 Failed to exec watch script
+9 error AdminPanel@1.0.0 watch: `nodemon src`
+9 error Exit status 1
+10 error Failed at the AdminPanel@1.0.0 watch script.
+10 error This is most likely a problem with the AdminPanel package,
+10 error not with npm itself.
+10 error Tell the author that this fails on your system:
+10 error     nodemon src
+10 error You can get their info via:
+10 error     npm owner ls AdminPanel
+10 error There is likely additional logging output above.
+11 error System Linux 4.14.0-parrot2-amd64
+12 error command "/usr/bin/node" "/usr/bin/npm" "run" "watch"
+13 error cwd /home/crow/Desktop/github-repos/week-8/project/AdminPanel
+14 error node -v v6.12.0
+15 error npm -v 1.4.21
+16 error code ELIFECYCLE
+17 verbose exit [ 1, true ]
